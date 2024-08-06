@@ -1,11 +1,11 @@
 CREATE TABLE IF NOT EXISTS messages (
-  "id"                uuid    PRIMARY KEY       NOT NULL DEFAULT gen_random_uuid();
-  "room_id"           uuid                      NOT NULL,
-  "messages"          VARCHAR(255)              NOT NULL,
-  "reaction_count"    BIGINT                    NOT NULL DEFAULT 0,
-  "answered"          BOOLEAN                   NOT NULL DEFAULT false,
+  "id"                uuid          PRIMARY KEY       NOT NULL DEFAULT gen_random_uuid(),
+  "room_id"           uuid                            NOT NULL,
+  "messages"          VARCHAR(255)                    NOT NULL,
+  "reaction_count"    BIGINT                          NOT NULL DEFAULT 0,
+  "answered"          BOOLEAN                         NOT NULL DEFAULT false,
 
-  FOREIN KEY (room_id) REFERENCES rooms(id)
+  foreign key (room_id) REFERENCES rooms(id)
 );
 
 ---- create above / drop below ----
