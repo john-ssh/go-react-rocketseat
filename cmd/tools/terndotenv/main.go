@@ -13,6 +13,7 @@ func main() {
 
   cmd := exec.Command(
     "tern",
+    "/home/john/go/bin/tern",
     "migrate",
     "--migrations",
     "./internal/store/pgstore/migrations",
